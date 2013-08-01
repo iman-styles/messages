@@ -1,0 +1,132 @@
+// alerts
+// green, red and blue
+.alert-red {
+  background: $error-background-color;
+  color: $error-color;
+
+  &:after {
+    background: $error-color;
+  }
+}
+
+.alert-green {
+  background: $success-background-color;
+  color: darken($success-color, 11%);
+
+  &:after {
+    background: $success-color;
+  }
+}
+
+.alert-blue {
+  background: rgba($blue-lightest, 0.1);
+  background: #e5f2f9;
+  color: #666;
+
+  &:after {
+    background: $blue-lightest;
+  }
+}
+
+.alert-red,
+.alert-blue,
+.alert-green {
+  font-family: $font-family-roboto;
+  line-height: 18px;
+  padding: spacing(2) spacing(2) spacing(2) spacing(3);
+  position: relative;
+
+  &:after {
+    bottom: 0px;
+    content: "";
+    display: block;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 5px;
+  }
+}
+
+// Serverside generated error message
+.validation-summary-errors {
+  @extend .alert-red;
+  margin: spacing(4) 0;
+  min-height: 65px;
+  padding-left: 117px;
+
+  &:before {
+    @extend .icon-triangle-warning-red;
+    content: "";
+    display: block;
+    width: 60px;
+    height: 53px;
+    position: absolute;
+    top: 25px;
+    left: spacing(3);
+  }
+
+  span {
+    @extend .title-3;
+    color: darken($error-color, 5%);
+    font-weight: 500;
+    margin-bottom: spacing(1);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 spacing(2);
+  }
+
+  li {
+    margin: 0;
+    word-wrap: break-word;
+  }
+}
+
+.msg-success {
+  @extend .alert-green;
+  padding-left: 87px;
+
+  &:before {
+    @extend .icon-circle-tick-green-32;
+    content: "";
+    display: block;
+    height: 32px;
+    left: spacing(3);
+    position: absolute;
+    top: 25px;
+    width: 32px;
+  }
+
+  span {
+    @extend .title-3;
+    color: darken($success-color, 6%);
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+}
+
+.msg-info {
+  @extend .alert-blue;
+  padding-left: 87px;
+
+  &:before {
+    @extend .icon-blue-info-32;
+    content: "";
+    display: block;
+    height: 32px;
+    left: spacing(3);
+    position: absolute;
+    top: 22px;
+    width: 32px;
+  }
+
+  span {
+    @extend .title-3;
+    color: $blue-lightest;
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+}
