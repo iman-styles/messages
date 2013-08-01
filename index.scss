@@ -85,17 +85,17 @@
 
 .msg-success {
   @extend .alert-green;
-  padding-left: 87px;
+  padding-left: 117px;
 
   &:before {
-    @extend .icon-circle-tick-green-32;
+    @extend .icon-lrg-green-tick;
     content: "";
     display: block;
-    height: 32px;
+    height: 60px;
     left: spacing(3);
     position: absolute;
     top: 25px;
-    width: 32px;
+    width: 60px;
   }
 
   span {
